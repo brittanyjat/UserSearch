@@ -26,7 +26,6 @@ module.exports = {
                 }
             }
         }).then(results => {
-            // console.log(results[0].dataValues)
             res.status(200).send(results)
         }).catch(err => console.log(err))
     }
