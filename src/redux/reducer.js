@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const initialState = {
-    name: '',
+    firstName: '',
+    lastName: '',
     address: '',
     age: null,
     interests: [
@@ -12,7 +13,7 @@ const initialState = {
     picture: '',
     loading: false,
     results: [],
-    search: false
+    searching: false,
 }
 
 const UPDATE_STATE = 'UPDATE_STATE';
@@ -34,9 +35,9 @@ export default function reducer(state = initialState, action) {
         case SEARCH + _PENDING:
             return { ...state, loading: true }
         case SEARCH + _FULFILLED:
-            return { ...state, loading: false, results: payload, search: true }
+            return { ...state, loading: false, results: payload, searching: true }
         case RESET:
-            return { ...state, results: []}
+            return { ...state, results: [], searching: false }
         default:
             return state
     }
@@ -65,7 +66,7 @@ export function search(val) {
     }
 }
 
-export function reset(){
+export function reset() {
     return {
         type: RESET
     }

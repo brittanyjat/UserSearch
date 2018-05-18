@@ -4,9 +4,10 @@ const Op = Sequelize.Op;
 module.exports = {
     addUser: (req, res) => {
         const db = req.app.get('db');
-        const { name, address, age, interests, picture } = req.body;
+        const { firstName, lastName, address, age, interests, picture } = req.body;
         db.People.create({
-            name: name,
+            firstName: firstName,
+            lastName: lastName,
             address: address,
             age: age,
             interests: interests,
@@ -14,7 +15,7 @@ module.exports = {
         })
             .then(person => {
                 res.status(200).send(person)
-            }).catch(err => console.log(err))
+            }).catch(err => res.status(500).send(err))
     },
     getUser: (req, res) => {
         const db = req.app.get('db');
@@ -24,12 +25,12 @@ module.exports = {
                 where: {
                     $or: [
                         {
-                            name: {
+                            firstName: {
                                 [Op.iLike]: `%${name}%`
                             }
                         },
                         {
-                            address: {
+                            lastName: {
                                 [Op.iLike]: `%${name}%`
                             }
                         }

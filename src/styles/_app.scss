@@ -6,6 +6,7 @@ $mint: #06A77D;
 body {
     background-color: #2E363F;
     font-family: 'Open Sans', sans-serif;
+    color: $gray;
 }
 
 .user-individual {
@@ -16,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: black;
     img {
         height: 150px;
         width: 150px;

@@ -1,12 +1,10 @@
 module.exports = (sequelize, Sequelize) => {
     const People = sequelize.define('people', {
-        // id: {
-        //     type: Sequelize.INTEGER,
-        //     primaryKey: true,
-        //     autoIncrement: true
-        //     // defaultValue: DataTypes.UUIDV4
-        // },
-        name: {
+        lastName: {
+            type: Sequelize.STRING,
+            required: true
+        },
+        firstName: {
             type: Sequelize.STRING,
             required: true
         },
@@ -19,7 +17,7 @@ module.exports = (sequelize, Sequelize) => {
             required: true
         },
         interests: {
-            type: Sequelize.ARRAY(Sequelize.TEXT) ,
+            type: Sequelize.ARRAY(Sequelize.TEXT),
             required: false
         },
         picture: {
