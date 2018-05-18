@@ -19,14 +19,29 @@ module.exports = {
     getUser: (req, res) => {
         const db = req.app.get('db');
         const { name } = req.query;
-        db.People.findAll({
-            where: {
-                name: {
-                    [Op.iLike]: `%${name}%`
+        // db.People.findAll({
+        //     where: {
+        //         name: {
+        //             [Op.iLike]: `%${name}%`
+        //         }
+        //     }
+        // })
+        //     .then(results => {
+        //         res.status(200).send(results)
+        //     }).catch(err => console.log(err))
+        setTimeout(function () {
+            db.People.findAll({
+                where: {
+                    name: {
+                        [Op.iLike]: `%${name}%`
+                    }
                 }
-            }
-        }).then(results => {
-            res.status(200).send(results)
-        }).catch(err => console.log(err))
+            })
+                .then(results => {
+                    res.status(200).send(results)
+                }).catch(err => console.log(err))
+        }, 2000)
     }
 }
+
+

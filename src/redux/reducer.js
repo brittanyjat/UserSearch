@@ -11,7 +11,8 @@ const initialState = {
     ],
     picture: '',
     loading: false,
-    results: []
+    results: [],
+    search: false
 }
 
 const UPDATE_STATE = 'UPDATE_STATE';
@@ -32,7 +33,7 @@ export default function reducer(state = initialState, action) {
         case SEARCH + _PENDING:
             return { ...state, loading: true }
         case SEARCH + _FULFILLED:
-            return { ...state, loading: false, results: payload }
+            return { ...state, loading: false, results: payload, search: true }
         default:
             return state
     }
