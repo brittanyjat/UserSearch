@@ -5,14 +5,24 @@ import { connect } from 'react-redux';
 import { toggleModal } from '../redux/reducer';
 
 function TopSection(props) {
+    const { modalDisplay } = props;
     return (
         <div className='top-section-main-container'>
             <div className='search-add-button-container'>
-                <button onClick={() => props.toggleModal()}>Search</button>
-                <button onClick={() => props.toggleModal()}>Add User</button>
+                <button
+                    style={{ backgroundColor: modalDisplay !== 'search' ? '#465761' : null }}                
+                    onClick={() => props.toggleModal('search')}>
+                    Search
+                </button>
+
+                <button
+                    style={{ backgroundColor: modalDisplay !== 'add' ? '#465761' : null }}
+                    onClick={() => props.toggleModal('add')}>
+                    Add User
+                </button>
             </div>
             {
-                props.searchDisplay
+                modalDisplay === 'search'
                     ? <Search />
                     : <AddUser />
             }
@@ -22,7 +32,7 @@ function TopSection(props) {
 
 var mapStateToProps = (state) => {
     return {
-        searchDisplay: state.searchDisplay
+        modalDisplay: state.modalDisplay
     }
 }
 

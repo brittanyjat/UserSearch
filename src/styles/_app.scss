@@ -1,14 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
 $gray: #DEE7E7;
 $mint: #06A77D;
 $dkGray: #2E363F;
 $electric: #1768AC;
+$inactive: #465761;
+$roboto: 'Roboto', sans-serif;
+$sunflower: 'Sunflower', sans-serif;
 
 body {
     background-color: $gray;
-    font-family: 'Open Sans', sans-serif;
-    // color: $gray;
+}
+
+button {
+    background-color: $electric;
+    height: 60px;
+    border: none;
+    color: $gray;
+    font-size: 24px;
+    font-family: $sunflower;
+    font-weight: 300;
+    outline: none;
 }
 
 .user-individual {

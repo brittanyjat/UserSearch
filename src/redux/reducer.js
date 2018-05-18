@@ -14,7 +14,7 @@ const initialState = {
     loading: false,
     results: [],
     searching: false,
-    searchDisplay: true
+    modalDisplay: 'search'
 }
 
 const UPDATE_STATE = 'UPDATE_STATE';
@@ -41,7 +41,7 @@ export default function reducer(state = initialState, action) {
         case RESET:
             return { ...state, results: [], searching: false }
         case TOGGLE:
-            return { ...state, searchDisplay: !state.searchDisplay }
+            return { ...state, modalDisplay: payload }
         default:
             return state
     }
@@ -76,8 +76,9 @@ export function reset() {
     }
 }
 
-export function toggleModal() {
+export function toggleModal(prop) {
     return {
         type: TOGGLE,
+        payload: prop
     }
 }
