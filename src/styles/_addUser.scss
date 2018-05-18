@@ -1,0 +1,16 @@
+.show-add-form {
+    background-color: $gray;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vh;
+    margin: auto;
+    color: $dkGray;
+    border-radius: 3px;
+}
+
+.hide-add-form {
+    display: none;
+}

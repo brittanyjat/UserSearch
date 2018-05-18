@@ -14,6 +14,7 @@ const initialState = {
     loading: false,
     results: [],
     searching: false,
+    addModal: false
 }
 
 const UPDATE_STATE = 'UPDATE_STATE';
@@ -22,6 +23,7 @@ const SEARCH = 'SEARCH';
 const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
 const RESET = 'RESET';
+const TRIGGER_MODAL = 'TRIGGER_MODAL';
 
 export default function reducer(state = initialState, action) {
     const { payload } = action;
@@ -38,6 +40,8 @@ export default function reducer(state = initialState, action) {
             return { ...state, loading: false, results: payload, searching: true }
         case RESET:
             return { ...state, results: [], searching: false }
+        case TRIGGER_MODAL:
+            return { ...state, addModal: !state.addModal }
         default:
             return state
     }
@@ -69,5 +73,11 @@ export function search(val) {
 export function reset() {
     return {
         type: RESET
+    }
+}
+
+export function triggerModal() {
+    return {
+        type: TRIGGER_MODAL
     }
 }

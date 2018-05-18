@@ -2,9 +2,10 @@
 
 $gray: #DEE7E7;
 $mint: #06A77D;
+$dkGray: #2E363F;
 
 body {
-    background-color: #2E363F;
+    background-color: $dkGray;
     font-family: 'Open Sans', sans-serif;
     color: $gray;
 }

@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { handleInput, submitPerson } from '../redux/reducer';
+import { handleInput, submitPerson, triggerModal } from '../redux/reducer';
 
 function AddUser(props) {
-    const { handleInput, firstName, lastName, address, age, picture, submitPerson, interests } = props;
-    console.log(props.noResult)
+    const { addModal, triggerModal, handleInput, firstName, lastName, address, age, picture, submitPerson, interests } = props;
     return (
-        <div>
+        <div className={addModal ? 'show-add-form' : 'hide-add-form'}>
             <form>
                 <h4>First Name</h4>
                 <input type='text' onChange={(e) => handleInput('firstName', e.target.value)} />
@@ -23,7 +22,10 @@ function AddUser(props) {
                 <h4>Picture</h4>
                 <input type='text' onChange={(e) => handleInput('picture', e.target.value)} />
             </form>
-            <button onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: interests, picture: picture })}>Submit</button>
+            <div>
+                <button onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: interests, picture: picture })}>Submit</button>
+                <button onClick={() => triggerModal()}>Cancel</button>
+            </div>
         </div>
     )
 }
@@ -35,8 +37,17 @@ var mapStateToProps = (state) => {
         address: state.address,
         age: state.age,
         interests: state.interests,
-        picture: state.picture
+        picture: state.picture,
+        addModal: state.addModal
     }
 }
 
-export default connect(mapStateToProps, { handleInput, submitPerson })(AddUser);
+export default connect(mapStateToProps, { handleInput, submitPerson, triggerModal })(AddUser);
+
+
+
+// {
+//     searching && results.length === 0
+//         ? <AddUser noResult={true} />
+//         : null
+// }
