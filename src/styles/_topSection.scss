@@ -1,8 +1,8 @@
 
 
 .top-section-main-container {
-    width: 60vw;
-    height: 500px;
+    width: 80vw;
+    min-height: 375px;
     background-color: $dkGray;
     border-radius: 5px;
     margin: auto;
@@ -10,12 +10,61 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    h1 {
+        color: $gray;
+        font-family: $sunflower;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
 }
 
 .search-add-button-container {
     height: 100px;
-    width: 80%;
+    width: 90%;
     display: grid;
     align-items: center;
     grid-template-columns: 50% 50%;
+}
+
+.search-container {
+    min-height: 230px;
+    width: 90%;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    align-items: center;
+    justify-items: center;
+    margin-top: 15px;
+    i {
+        color: $gray;
+        font-size: 20px;
+    }
+}
+
+.submit-button {
+    width: 90%;
+}
+
+.add-user-form {
+    min-height: 230px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    input {
+        margin-top: 10px;
+    }
+}
+
+.submit-cancel-button-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 90%;
+    height: 100px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-gap: 3px;
 }

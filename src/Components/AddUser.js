@@ -1,32 +1,47 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { handleInput, submitPerson, toggleModal } from '../redux/reducer';
+import Asterisk from './Asterisk';
 
 function AddUser(props) {
     const { toggleModal, handleInput, firstName, lastName, address, age, picture, submitPerson, interests } = props;
     return (
-        <div className='add-user-form'>
-            <form>
-                <h4>First Name</h4>
-                <input type='text' onChange={(e) => handleInput('firstName', e.target.value)} />
+        <React.Fragment>
+            <form className='add-user-form'>
+                <h1><Asterisk />Required Field</h1>
+                <input
+                    required
+                    placeholder='First Name*'
+                    type='text'
+                    onChange={(e) => handleInput('firstName', e.target.value)} />
 
-                <h4>Last Name</h4>
-                <input type='text' onChange={(e) => handleInput('lastName', e.target.value)} />
+                <input
+                    required
+                    placeholder='Last Name*'
+                    type='text'
+                    onChange={(e) => handleInput('lastName', e.target.value)} />
 
-                <h4>Address</h4>
-                <input type='text' onChange={(e) => handleInput('address', e.target.value)} />
+                <input
+                    required
+                    placeholder='Address*'
+                    type='text' onChange={(e) => handleInput('address', e.target.value)} />
 
-                <h4>Age</h4>
-                <input type='number' onChange={(e) => handleInput('age', e.target.value)} />
+                <input
+                    required
+                    placeholder='Age*'
+                    type='number'
+                    onChange={(e) => handleInput('age', e.target.value)} />
 
-                <h4>Picture</h4>
-                <input type='text' onChange={(e) => handleInput('picture', e.target.value)} />
+                <input
+                    placeholder='Picture'
+                    type='text'
+                    onChange={(e) => handleInput('picture', e.target.value)} />
             </form>
-            <div>
+            <div className='submit-cancel-button-container'>
                 <button onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: interests, picture: picture })}>Submit</button>
                 <button onClick={() => toggleModal()}>Cancel</button>
             </div>
-        </div>
+        </React.Fragment>
     )
 }
 

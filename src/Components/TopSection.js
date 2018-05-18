@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { toggleModal } from '../redux/reducer';
 
 function TopSection(props) {
-    const { modalDisplay } = props;
+    const { modalDisplay, loading } = props;
     return (
         <div className='top-section-main-container'>
             <div className='search-add-button-container'>
@@ -23,7 +23,7 @@ function TopSection(props) {
             </div>
             {
                 modalDisplay === 'search'
-                    ? <Search />
+                    ? <Search loading={loading}/>
                     : <AddUser />
             }
         </div>
@@ -32,7 +32,8 @@ function TopSection(props) {
 
 var mapStateToProps = (state) => {
     return {
-        modalDisplay: state.modalDisplay
+        modalDisplay: state.modalDisplay,
+        loading: state.loading
     }
 }
 

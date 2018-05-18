@@ -13,13 +13,30 @@ body {
 
 button {
     background-color: $electric;
-    height: 60px;
+    height: 50px;
     border: none;
     color: $gray;
-    font-size: 24px;
+    font-size: 18px;
     font-family: $sunflower;
     font-weight: 300;
     outline: none;
+    cursor: pointer;
+}
+
+input {
+    border: solid 1.25px $gray;
+    background: none;
+    height: 40px;
+    width: 89%;
+    outline: none;
+    font-family: $sunflower;
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+input:focus {
+    border-color: $electric;
 }
 
 .user-individual {
@@ -41,25 +58,15 @@ button {
     }
 }
 
-.search-container {
-    h1 {
-        font-size: 28px;
-        color: $gray;
-    }
-    input {
-        border: solid 1px $gray;
-        background: none;
-        height: 30px;
-        width: 250px;
-        outline: none;
-    }
-    input:focus {
-        border-color: $mint;
-    }
-}
-
 .main-result-container {
     border: solid 2px green;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  @media (min-width:500px){
+      button {
+        height: 60px;
+        font-size: 24px;
+      }
   }
