@@ -1,0 +1,33 @@
+
+
+.top-section-main-container {
+    width: 60vw;
+    height: 500px;
+    background-color: $dkGray;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-add-button-container {
+    height: 100px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    button {
+        background-color: $electric;
+        height: 60px;
+        width: 200px;
+        border: none;
+        color: $gray;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+}

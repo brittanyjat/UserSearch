@@ -3,11 +3,12 @@
 $gray: #DEE7E7;
 $mint: #06A77D;
 $dkGray: #2E363F;
+$electric: #1768AC;
 
 body {
-    background-color: $dkGray;
+    background-color: $gray;
     font-family: 'Open Sans', sans-serif;
-    color: $gray;
+    // color: $gray;
 }
 
 .user-individual {
@@ -51,13 +52,3 @@ body {
     display: flex;
     flex-wrap: wrap;
   }
-
-
-//   background: rgba(20,92,158,1);
-//   background: -moz-linear-gradient(45deg, rgba(20,92,158,1) 0%, rgba(53,120,163,1) 21%, rgba(99,159,171,1) 51%, rgba(42,164,143,1) 81%, rgba(6,167,125,1) 100%);
-//   background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(20,92,158,1)), color-stop(21%, rgba(53,120,163,1)), color-stop(51%, rgba(99,159,171,1)), color-stop(81%, rgba(42,164,143,1)), color-stop(100%, rgba(6,167,125,1)));
-//   background: -webkit-linear-gradient(45deg, rgba(20,92,158,1) 0%, rgba(53,120,163,1) 21%, rgba(99,159,171,1) 51%, rgba(42,164,143,1) 81%, rgba(6,167,125,1) 100%);
-//   background: -o-linear-gradient(45deg, rgba(20,92,158,1) 0%, rgba(53,120,163,1) 21%, rgba(99,159,171,1) 51%, rgba(42,164,143,1) 81%, rgba(6,167,125,1) 100%);
-//   background: -ms-linear-gradient(45deg, rgba(20,92,158,1) 0%, rgba(53,120,163,1) 21%, rgba(99,159,171,1) 51%, rgba(42,164,143,1) 81%, rgba(6,167,125,1) 100%);
-//   background: linear-gradient(45deg, rgba(20,92,158,1) 0%, rgba(53,120,163,1) 21%, rgba(99,159,171,1) 51%, rgba(42,164,143,1) 81%, rgba(6,167,125,1) 100%);
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#145c9e', endColorstr='#06a77d', GradientType=1 );

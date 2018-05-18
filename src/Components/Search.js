@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { search, reset, triggerModal } from '../redux/reducer';
+import { search, reset } from '../redux/reducer';
 
 class TopSection extends Component {
     render() {
         const {
             reset,
-            search,
-            triggerModal
+            search
         } = this.props;
         return (
             <div className='search-container'>
@@ -17,10 +16,9 @@ class TopSection extends Component {
                     type='text'
                     placeholder='Name'
                     onChange={(e) => e.target.value.length > 0 ? search(e.target.value) : reset()} />
-                <button onClick={() => triggerModal()}>Add New User</button>
             </div>
         )
     }
 }
 
-export default connect(null, { search, reset, triggerModal })(TopSection);
+export default connect(null, { search, reset })(TopSection);

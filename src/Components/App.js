@@ -1,13 +1,11 @@
 import React from 'react';
-import Search from './Search';
-import AddUser from './AddUser';
+import TopSection from './TopSection';
 import Results from './Results';
 
 export default function App() {
   return (
     <React.Fragment>
-      <Search />
-      <AddUser />
+      <TopSection />
       <Results />
     </React.Fragment>
   );

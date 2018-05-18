@@ -14,7 +14,7 @@ const initialState = {
     loading: false,
     results: [],
     searching: false,
-    addModal: false
+    searchDisplay: true
 }
 
 const UPDATE_STATE = 'UPDATE_STATE';
@@ -23,7 +23,7 @@ const SEARCH = 'SEARCH';
 const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
 const RESET = 'RESET';
-const TRIGGER_MODAL = 'TRIGGER_MODAL';
+const TOGGLE = 'TOGGLE';
 
 export default function reducer(state = initialState, action) {
     const { payload } = action;
@@ -40,8 +40,8 @@ export default function reducer(state = initialState, action) {
             return { ...state, loading: false, results: payload, searching: true }
         case RESET:
             return { ...state, results: [], searching: false }
-        case TRIGGER_MODAL:
-            return { ...state, addModal: !state.addModal }
+        case TOGGLE:
+            return { ...state, searchDisplay: !state.searchDisplay }
         default:
             return state
     }
@@ -76,8 +76,8 @@ export function reset() {
     }
 }
 
-export function triggerModal() {
+export function toggleModal() {
     return {
-        type: TRIGGER_MODAL
+        type: TOGGLE,
     }
 }
