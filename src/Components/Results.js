@@ -11,14 +11,12 @@ function Results(props) {
                 <h3>{user.name}</h3>
                 <h4>{user.address}</h4>
                 <h4>{user.age}</h4>
-                {user.interests.map(x => {
-                    return (
-                        <ul key={x}>
-                            <li>{x}</li>
-                        </ul>
-                    )
-                })
-            }
+                <ul>
+                    <li>{user.interests[0]}</li>
+                    <li>{user.interests[1]}</li>
+                    <li>{user.interests[2]}</li>
+                    <li>{user.interests[3]}</li>
+                </ul>
             </div>
         )
     })
@@ -27,7 +25,9 @@ function Results(props) {
             {
                 loading
                     ? <span>loading</span>
-                    : resultDisplay
+                    : <div className='main-result-container'>
+                        {resultDisplay}
+                    </div>
             }
         </div>
     )

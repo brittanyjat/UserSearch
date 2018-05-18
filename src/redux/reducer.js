@@ -20,6 +20,7 @@ const SUBMIT = 'SUBMIT';
 const SEARCH = 'SEARCH';
 const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
+const RESET = 'RESET';
 
 export default function reducer(state = initialState, action) {
     const { payload } = action;
@@ -34,6 +35,8 @@ export default function reducer(state = initialState, action) {
             return { ...state, loading: true }
         case SEARCH + _FULFILLED:
             return { ...state, loading: false, results: payload, search: true }
+        case RESET:
+            return { ...state, results: []}
         default:
             return state
     }
@@ -59,5 +62,11 @@ export function search(val) {
     return {
         type: SEARCH,
         payload: promise
+    }
+}
+
+export function reset(){
+    return {
+        type: RESET
     }
 }

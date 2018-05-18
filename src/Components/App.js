@@ -6,7 +6,7 @@ import Results from './Results';
 export default function App() {
   return (
     <React.Fragment>
-      <Searchbar />
+      {/* <Searchbar /> */}
       <Search />
       <Results />
     </React.Fragment>
