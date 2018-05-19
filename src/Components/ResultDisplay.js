@@ -20,7 +20,7 @@ export default function ResultDisplay(props) {
                     <h5>— Age —</h5>
                     <h4>{user.age}</h4>
                     <hr />
-                    <h5>— Hobbies —</h5>
+                    <h5>— Interests —</h5>
                     <h4>{user.interests[0] || ''}</h4>
                     <h4>{user.interests[1] || ''}</h4>
                     <h4>{user.interests[2] || ''}</h4>

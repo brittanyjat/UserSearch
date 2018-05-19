@@ -13,7 +13,7 @@ function Search(props) {
     return (
         <div className='search-container'>
             <h1>Search</h1>
-            <h4>(Partial searches accepted)</h4>
+            <h4>(Enter all, or part of the name you are searching for)</h4>
             <input
                 type='text'
                 placeholder='ENTER FIRST OR LAST NAME'

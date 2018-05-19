@@ -39,8 +39,20 @@
     }
     h4 {
         font-family: $roboto;
-        // text-transform: uppercase;
     }
+}
+
+.result-count {
+    margin: auto;
+    text-align: center;
+    margin-top: 35px;
+    text-transform: uppercase;
+    font-family: $roboto;
+    font-size: 20px;
+    border-bottom: 2px solid $electric;
+    width: 200px;
+    padding-bottom: 10px;
+    font-weight: 300;
 }
 
 .user-image-container {

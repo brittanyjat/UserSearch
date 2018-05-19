@@ -83,7 +83,10 @@ function AddUser(props) {
                     type='submit'
                     disabled={firstName && lastName && address && age ? false : true}
                     form='add-user'
-                    onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture })}>
+                    onClick={(e) => 
+                        submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture })
+                        && alert('User Added')
+                        }>
                     Submit
                 </button>
                 <button

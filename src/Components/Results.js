@@ -7,6 +7,11 @@ function Results(props) {
     return (
         <div>
             {
+                searching
+                    ? <h1 className='result-count'>{results.length} Results</h1>
+                    : null
+            }
+            {
                 !loading && searching
                     ? <ResultDisplay results={results} />
                     : null
