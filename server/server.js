@@ -12,7 +12,7 @@ const { SERVER_PORT, DATABASE_URI } = process.env;
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 
-// app.use(express.static(`${__dirname}/../build`));
+app.use(express.static(`${__dirname}/../build`));
 
 app.set('db', db);
 
