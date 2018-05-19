@@ -10,11 +10,12 @@ const initialState = {
         'cooking',
         'kite flying'
     ],
-    picture: '',
+    picture: 'https://res.cloudinary.com/dtkadxjhq/image/upload/v1526689504/bzi0yuvxegpzga9teyuc.png',
     loading: false,
     results: [],
     searching: false,
-    modalDisplay: 'search'
+    modalDisplay: 'search',
+    photoLoading: false
 }
 
 const UPDATE_STATE = 'UPDATE_STATE';
@@ -24,6 +25,7 @@ const _PENDING = '_PENDING';
 const _FULFILLED = '_FULFILLED';
 const RESET = 'RESET';
 const TOGGLE = 'TOGGLE';
+const TOGGLE_LOADING = 'TOGGLE_LOADING';
 
 export default function reducer(state = initialState, action) {
     const { payload } = action;
@@ -42,6 +44,8 @@ export default function reducer(state = initialState, action) {
             return { ...state, results: [], searching: false }
         case TOGGLE:
             return { ...state, modalDisplay: payload }
+        case TOGGLE_LOADING:
+            return { ...state, photoLoading: !state.photoLoading }
         default:
             return state
     }
@@ -80,5 +84,11 @@ export function toggleModal(prop) {
     return {
         type: TOGGLE,
         payload: prop
+    }
+}
+
+export function forceLoading() {
+    return {
+        type: TOGGLE_LOADING
     }
 }
