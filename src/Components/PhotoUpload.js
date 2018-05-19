@@ -42,7 +42,7 @@ export default class PhotoUpload extends Component {
     render() {
         const dropzoneStyle = {
             width: "89%",
-            border: "solid 1.25px #DEE7E7",
+            border: "dashed 1.25px #DEE7E7",
             cursor: "pointer",
             height: '40px',
             fontSize: '16px',

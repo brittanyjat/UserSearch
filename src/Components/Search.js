@@ -1,26 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { search, reset } from '../redux/reducer';
+import { search, reset, handleInput } from '../redux/reducer';
 
 function Search(props) {
     const {
         reset,
         search,
-        loading
+        loading,
+        handleInput,
+        searchTerm
     } = props;
+
     return (
         <div className='search-container'>
             <h1>Search</h1>
-            <h4>(Partial searches acceptable)</h4>
+            <h4>(Partial searches accepted)</h4>
             <input
                 type='text'
                 placeholder='ENTER FIRST OR LAST NAME'
-                onChange={(e) => e.target.value.length > 0 ? search(e.target.value) : reset()} />
+                onChange={(e) => handleInput('searchTerm', e.target.value)}
+            />
             <i className={loading ? 'fas fa-spinner fa-spin' : ''}></i>
-            <button className='submit-button'>{loading ? 'Fetching Results . . .' : 'Submit'}</button>
+            <button
+                className='submit-button'
+                onClick={() => search(searchTerm)}>
+                {loading ? 'Fetching Results . . .' : 'Submit'}
+            </button>
         </div>
     )
 }
 
+let mapStateToProps = (state) => {
+    return {
+        searchTerm: state.searchTerm
+    }
+}
 
-export default connect(null, { search, reset })(Search);
+export default connect(mapStateToProps, { search, reset, handleInput })(Search);

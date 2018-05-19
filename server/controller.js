@@ -39,21 +39,7 @@ module.exports = {
             })
                 .then(results => {
                     res.status(200).send(results)
-                }).catch(err => console.log(err))
-        }, 1500)
+                }).catch(err => res.status(500).send(err))
+        }, 2000)
     }
 }
-
-
-// db.People.findAll({
-//     where: {
-//         name: {
-//             [Op.iLike]: `%${name}%`
-//         },
-//         $or: {
-//             age: {
-//                 [Op.iLike]: `%${name}%`
-//             }
-//         }
-//     }
-// })

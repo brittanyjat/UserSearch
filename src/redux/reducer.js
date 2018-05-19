@@ -14,7 +14,8 @@ const initialState = {
     results: [],
     searching: false,
     modalDisplay: 'search',
-    photoLoading: false
+    photoLoading: false,
+    searchTerm: null
 }
 
 const UPDATE_STATE = 'UPDATE_STATE';

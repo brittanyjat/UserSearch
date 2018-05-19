@@ -3,7 +3,7 @@ const express = require('express')
     , app = express()
     , bodyParser = require('body-parser')
     , morgan = require('morgan')
-    , actions = require('./actions')
+    , controller = require('./controller')
     , Sequelize = require('sequelize')
     , db = require('./db');
 
@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 
 app.set('db', db);
 
-app.post('/person', actions.addUser);
-app.get('/person', actions.getUser);
+app.post('/person', controller.addUser);
+app.get('/person', controller.getUser);
 
 db.sequelize.sync().then(() => {
     app.listen(SERVER_PORT, () => {
