@@ -20,7 +20,6 @@ function AddUser(props) {
         interest3,
         interest4,
         reset } = props;
-    console.log(interest1, interest2, interest3, interest4)
     return (
         <React.Fragment>
             <form className='add-user-form' id='add-user'>
