@@ -20,6 +20,11 @@
     }
 }
 
+i {
+    color: $gray;
+    font-size: 20px;
+}
+
 .search-add-button-container {
     height: 100px;
     width: 90%;
@@ -54,6 +59,10 @@
     align-items: center;
     margin-top: 15px;
     input {
+        margin-top: 10px;
+    }
+    i {
+        font-size: 28px;
         margin-top: 10px;
     }
 }

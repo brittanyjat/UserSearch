@@ -30,7 +30,7 @@ export default class PhotoUpload extends Component {
                 const data = response.data;
                 const fileURL = data.secure_url
                 this.props.handleInput('picture', fileURL)
-                console.log(data);
+                // console.log(data);
                 this.props.forceLoading();
             })
         });

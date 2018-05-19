@@ -34,6 +34,12 @@ function AddUser(props) {
                     type='number'
                     onChange={(e) => handleInput('age', e.target.value)} />
 
+                {
+                    photoLoading
+                        ? <i className='fas fa-spinner fa-spin'></i>
+                        : null
+
+                }
                 <img src={picture} alt='user-profile' className='image-preview' />
                 <PhotoUpload picture={picture} handleInput={handleInput} forceLoading={forceLoading} />
             </form>
@@ -47,7 +53,10 @@ function AddUser(props) {
                     onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: interests, picture: picture })}>
                     Submit
                 </button>
-                <button onClick={() => toggleModal()}>Cancel</button>
+                <button
+                    type='cancel'
+                    form='add-user' 
+                    >Cancel</button>
             </div>
         </React.Fragment>
     )
