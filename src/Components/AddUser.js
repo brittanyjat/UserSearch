@@ -1,12 +1,26 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { handleInput, submitPerson, toggleModal, forceLoading } from '../redux/reducer';
+import { handleInput, submitPerson, forceLoading, reset } from '../redux/reducer';
 import Asterisk from './Asterisk';
 import PhotoUpload from './PhotoUpload';
 
 function AddUser(props) {
-    const { toggleModal, handleInput, photoLoading, firstName, lastName, address, age, picture, submitPerson, interests, forceLoading } = props;
-
+    const {
+        handleInput,
+        photoLoading,
+        firstName,
+        lastName,
+        address,
+        age,
+        picture,
+        submitPerson,
+        forceLoading,
+        interest1,
+        interest2,
+        interest3,
+        interest4,
+        reset } = props;
+    console.log(interest1, interest2, interest3, interest4)
     return (
         <React.Fragment>
             <form className='add-user-form' id='add-user'>
@@ -31,8 +45,27 @@ function AddUser(props) {
                 <input
                     required
                     placeholder='Age*'
-                    type='number'
-                    onChange={(e) => handleInput('age', e.target.value)} />
+                    type='text' onChange={(e) => handleInput('age', e.target.value)} />
+
+                <input
+                    placeholder='Interest'
+                    type='text'
+                    onChange={(e) => handleInput('interest1', e.target.value)} />
+
+                <input
+                    placeholder='Interest'
+                    type='text'
+                    onChange={(e) => handleInput('interest2', e.target.value)} />
+
+                <input
+                    placeholder='Interest'
+                    type='text'
+                    onChange={(e) => handleInput('interest3', e.target.value)} />
+
+                <input
+                    placeholder='Interest'
+                    type='text'
+                    onChange={(e) => handleInput('interest4', e.target.value)} />
 
                 {
                     photoLoading
@@ -50,13 +83,14 @@ function AddUser(props) {
                     type='submit'
                     disabled={firstName && lastName && address && age ? false : true}
                     form='add-user'
-                    onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: interests, picture: picture })}>
+                    onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture })}>
                     Submit
                 </button>
                 <button
-                    type='cancel'
-                    form='add-user' 
-                    >Cancel</button>
+                    type='reset'
+                    form='add-user'
+                    onClick={() => reset()}
+                >Cancel</button>
             </div>
         </React.Fragment>
     )
@@ -68,10 +102,13 @@ let mapStateToProps = (state) => {
         lastName: state.lastName,
         address: state.address,
         age: state.age,
-        interests: state.interests,
+        interest1: state.interest1,
+        interest2: state.interest2,
+        interest3: state.interest3,
+        interest4: state.interest4,
         picture: state.picture,
         photoLoading: state.photoLoading
     }
 }
 
-export default connect(mapStateToProps, { handleInput, submitPerson, toggleModal, forceLoading })(AddUser);
+export default connect(mapStateToProps, { handleInput, submitPerson, forceLoading, reset })(AddUser);

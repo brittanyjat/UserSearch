@@ -7,12 +7,6 @@ function Results(props) {
     return (
         <div>
             {
-                loading
-                    ? <span>loading</span>
-                    : null
-            }
-
-            {
                 !loading && searching
                     ? <ResultDisplay results={results} />
                     : null

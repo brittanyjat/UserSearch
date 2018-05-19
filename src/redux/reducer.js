@@ -5,11 +5,10 @@ const initialState = {
     lastName: null,
     address: null,
     age: null,
-    interests: [
-        'soccer',
-        'cooking',
-        'kite flying'
-    ],
+    interest1: '',
+    interest2: '',
+    interest3: '',
+    interest4: '',
     picture: 'https://res.cloudinary.com/dtkadxjhq/image/upload/v1526689504/bzi0yuvxegpzga9teyuc.png',
     loading: false,
     results: [],
@@ -41,7 +40,7 @@ export default function reducer(state = initialState, action) {
         case SEARCH + _FULFILLED:
             return { ...state, loading: false, results: payload, searching: true }
         case RESET:
-            return { ...state, results: [], searching: false }
+            return Object.assign({}, state, initialState);
         case TOGGLE:
             return { ...state, modalDisplay: payload }
         case TOGGLE_LOADING:

@@ -37,13 +37,20 @@ i {
     min-height: 230px;
     width: 90%;
     display: grid;
-    grid-template-rows: 33% 33% 33%;
+    grid-template-rows: 25% 25% 25% 25%;
     align-items: center;
     justify-items: center;
     margin-top: 15px;
     i {
         color: $gray;
         font-size: 20px;
+    }
+    h4 {
+        text-transform: lowercase;
+        font-family: $sunflower;
+        font-weight: 300;
+        color: $gray;
+        letter-spacing: .5px;
     }
 }
 

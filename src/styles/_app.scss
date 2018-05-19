@@ -1,6 +1,5 @@
 
 $gray: #DEE7E7;
-$mint: #06A77D;
 $dkGray: #2E363F;
 $electric: #1768AC;
 $inactive: #465761;
@@ -9,6 +8,10 @@ $sunflower: 'Sunflower', sans-serif;
 
 body {
     background-color: $gray;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
 
 button {
@@ -50,34 +53,9 @@ button[disabled]{
   color: $dkGray;
 }
 
-.user-individual {
-    margin: 40px;
-    background-color: $gray;
-    width: 300px;
-    height: 375px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: black;
-    img {
-        height: 150px;
-        width: 150px;
-        border-radius: 50%;
-        border: solid 5px black;
-        position: relative;
-        bottom: 40px;
-    }
-}
-
-.main-result-container {
-    border: solid 2px green;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  @media (min-width:500px){
-      button {
+@media (min-width:500px){
+    button {
         height: 60px;
         font-size: 24px;
-      }
+    }
   }
