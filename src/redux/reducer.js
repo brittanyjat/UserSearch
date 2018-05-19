@@ -1,9 +1,9 @@
 import axios from 'axios';
 
 const initialState = {
-    firstName: '',
-    lastName: '',
-    address: '',
+    firstName: null,
+    lastName: null,
+    address: null,
     age: null,
     interests: [
         'soccer',

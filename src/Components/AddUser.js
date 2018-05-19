@@ -6,9 +6,10 @@ import PhotoUpload from './PhotoUpload';
 
 function AddUser(props) {
     const { toggleModal, handleInput, photoLoading, firstName, lastName, address, age, picture, submitPerson, interests, forceLoading } = props;
+
     return (
         <React.Fragment>
-            <form className='add-user-form'>
+            <form className='add-user-form' id='add-user'>
                 <h1><Asterisk />Required Field</h1>
                 <input
                     required
@@ -33,11 +34,19 @@ function AddUser(props) {
                     type='number'
                     onChange={(e) => handleInput('age', e.target.value)} />
 
+                <img src={picture} alt='user-profile' className='image-preview' />
                 <PhotoUpload picture={picture} handleInput={handleInput} forceLoading={forceLoading} />
             </form>
 
+
             <div className='submit-cancel-button-container'>
-                <button onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: interests, picture: picture })}>Submit</button>
+                <button
+                    type='submit'
+                    disabled={firstName && lastName && address && age ? false : true}
+                    form='add-user'
+                    onClick={(e) => submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: interests, picture: picture })}>
+                    Submit
+                </button>
                 <button onClick={() => toggleModal()}>Cancel</button>
             </div>
         </React.Fragment>

@@ -35,8 +35,19 @@ input {
     padding-left: 10px;
     box-sizing: border-box;
 }
+
 input:focus {
     border-color: $electric;
+}
+
+input, select, textarea {
+    color: $gray;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: $inactive;
+  color: $dkGray;
 }
 
 .user-individual {
