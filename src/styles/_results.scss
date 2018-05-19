@@ -1,8 +1,8 @@
 .main-result-container {
-    // border: solid 1px green;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 .user-individual {
@@ -79,4 +79,15 @@
     grid-template-columns: 40% 60%;
     font-family: $roboto;
     color: $gray;
+}
+
+@media (min-width:768px){
+    .main-result-container {
+        // display: grid;
+        // grid-template-columns: 50% 50%;
+        // justify-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
