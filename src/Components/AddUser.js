@@ -45,26 +45,27 @@ function AddUser(props) {
                     required
                     placeholder='Age*'
                     type='text' onChange={(e) => handleInput('age', e.target.value)} />
+                <div>
+                    <input
+                        placeholder='Interest'
+                        type='text'
+                        onChange={(e) => handleInput('interest1', e.target.value)} />
 
-                <input
-                    placeholder='Interest'
-                    type='text'
-                    onChange={(e) => handleInput('interest1', e.target.value)} />
+                    <input
+                        placeholder='Interest'
+                        type='text'
+                        onChange={(e) => handleInput('interest2', e.target.value)} />
 
-                <input
-                    placeholder='Interest'
-                    type='text'
-                    onChange={(e) => handleInput('interest2', e.target.value)} />
+                    <input
+                        placeholder='Interest'
+                        type='text'
+                        onChange={(e) => handleInput('interest3', e.target.value)} />
 
-                <input
-                    placeholder='Interest'
-                    type='text'
-                    onChange={(e) => handleInput('interest3', e.target.value)} />
-
-                <input
-                    placeholder='Interest'
-                    type='text'
-                    onChange={(e) => handleInput('interest4', e.target.value)} />
+                    <input
+                        placeholder='Interest'
+                        type='text'
+                        onChange={(e) => handleInput('interest4', e.target.value)} />
+                </div>
 
                 {
                     photoLoading

@@ -51,7 +51,9 @@ export default class PhotoUpload extends Component {
             marginTop: '10px',
             fontWeight: '300',
             display: 'flex',
+            flexDirection: 'row',
             alignItems: 'center',
+            justifyContent: 'center',
             paddingLeft: '10px',
             boxSizing: 'border-box'
         };

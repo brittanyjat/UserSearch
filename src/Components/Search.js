@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { search, reset, handleInput } from '../redux/reducer';
+import { search, handleInput } from '../redux/reducer';
 
 function Search(props) {
     const {
-        reset,
         search,
         loading,
         handleInput,
@@ -36,4 +35,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { search, reset, handleInput })(Search);
+export default connect(mapStateToProps, { search, handleInput })(Search);
