@@ -47,22 +47,22 @@ function AddUser(props) {
                     type='text' onChange={(e) => handleInput('age', e.target.value)} />
                 <div>
                     <input
-                        placeholder='Interest'
+                        placeholder='Interest*'
                         type='text'
                         onChange={(e) => handleInput('interest1', e.target.value)} />
 
                     <input
-                        placeholder='Interest'
+                        placeholder='Interest*'
                         type='text'
                         onChange={(e) => handleInput('interest2', e.target.value)} />
 
                     <input
-                        placeholder='Interest'
+                        placeholder='Interest*'
                         type='text'
                         onChange={(e) => handleInput('interest3', e.target.value)} />
 
                     <input
-                        placeholder='Interest'
+                        placeholder='Interest*'
                         type='text'
                         onChange={(e) => handleInput('interest4', e.target.value)} />
                 </div>
@@ -81,7 +81,7 @@ function AddUser(props) {
             <div className='submit-cancel-button-container'>
                 <button
                     type='submit'
-                    disabled={firstName && lastName && address && age ? false : true}
+                    disabled={firstName && lastName && address && age && interest1 && interest2 && interest3 && interest4 ? false : true}
                     form='add-user'
                     onClick={(e) => 
                         submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture })
