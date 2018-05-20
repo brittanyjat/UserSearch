@@ -41,7 +41,7 @@
 
 + considering the sample data below: searching for 'Wi' would reult in 'Rilo Lewis' and 'Willy Wonka' as they both have 'wi' in their name.
 
-#### Sample Data
+###### Sample Data
 
 ```[
     {
