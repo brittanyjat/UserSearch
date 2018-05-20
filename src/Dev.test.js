@@ -22,8 +22,6 @@ let addUser = (person) => {
   return axios.post('/person', person).then(res => res.data)
 }
 
-
-
 describe('Search users', () => {
   test('Testing to see if test gets results back', () => {
     let promise = searchUsers('Willy');
