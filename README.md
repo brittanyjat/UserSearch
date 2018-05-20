@@ -36,10 +36,10 @@
 ## Instructions
 
 ### Searching
-1. Type part or all of the user's name you are searching for. You can search for Their first and/or last name.
+1. Type part or all of the user's name you are searching for. You can search for their first and/or last name.
 2. Queries are not case sensitive. 
 
-+ example: considering the sample data below, if I were to search for 'Wi', both 'Rilo Lewis' and 'Willy Wonka' will be returned as they both have 'wi' in their name.
++ considering the sample data below: searching for 'Wi' would reult in 'Rilo Lewis' and 'Willy Wonka' as they both have 'wi' in their name.
 
 ### Sample Data
 
