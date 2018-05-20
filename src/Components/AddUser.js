@@ -1,102 +1,133 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleInput, submitPerson, forceLoading, reset } from '../redux/reducer';
 import Asterisk from './Asterisk';
 import PhotoUpload from './PhotoUpload';
 
-function AddUser(props) {
-    const {
-        handleInput,
-        photoLoading,
-        firstName,
-        lastName,
-        address,
-        age,
-        picture,
-        submitPerson,
-        forceLoading,
-        interest1,
-        interest2,
-        interest3,
-        interest4,
-        reset } = props;
-    return (
-        <React.Fragment>
-            <form className='add-user-form' id='add-user'>
-                <h1><Asterisk />Required Field</h1>
-                <input
-                    required
-                    placeholder='First Name*'
-                    type='text'
-                    onChange={(e) => handleInput('firstName', e.target.value)} />
+class AddUser extends Component {
 
-                <input
-                    required
-                    placeholder='Last Name*'
-                    type='text'
-                    onChange={(e) => handleInput('lastName', e.target.value)} />
+    handleSubmit = () => {
+        let passwordCheck = prompt('Please enter admin password:');
+        if (passwordCheck === process.env.REACT_APP_PASSWORD) {
+            this.submitUser()
+        } else if (passwordCheck === null) {
+            
+        } else {
+            this.handleSubmit()
+        }
+    }
 
-                <input
-                    required
-                    placeholder='Address*'
-                    type='text' onChange={(e) => handleInput('address', e.target.value)} />
+    submitUser = () => {
+        const {
+            firstName,
+            lastName,
+            address,
+            age,
+            picture,
+            interest1,
+            interest2,
+            interest3,
+            interest4,
+            submitPerson } = this.props;
 
-                <input
-                    required
-                    placeholder='Age*'
-                    type='text' onChange={(e) => handleInput('age', e.target.value)} />
-                <div>
+        submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture })
+        alert('User Added')
+        document.getElementById('add-user').submit();
+    }
+
+    render() {
+        const {
+            handleInput,
+            photoLoading,
+            firstName,
+            lastName,
+            address,
+            age,
+            picture,
+            forceLoading,
+            interest1,
+            interest2,
+            interest3,
+            interest4,
+            reset } = this.props;
+
+        // if (this.state.password == true) this.submitUser({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture });
+        return (
+            <React.Fragment>
+                <form className='add-user-form' id='add-user'>
+                    <h1><Asterisk />Required Field</h1>
                     <input
-                        placeholder='Interest*'
+                        required
+                        placeholder='First Name*'
                         type='text'
-                        onChange={(e) => handleInput('interest1', e.target.value)} />
+                        onChange={(e) => handleInput('firstName', e.target.value)} />
 
                     <input
-                        placeholder='Interest*'
+                        required
+                        placeholder='Last Name*'
                         type='text'
-                        onChange={(e) => handleInput('interest2', e.target.value)} />
+                        onChange={(e) => handleInput('lastName', e.target.value)} />
 
                     <input
-                        placeholder='Interest*'
-                        type='text'
-                        onChange={(e) => handleInput('interest3', e.target.value)} />
+                        required
+                        placeholder='Address*'
+                        type='text' onChange={(e) => handleInput('address', e.target.value)} />
 
                     <input
-                        placeholder='Interest*'
-                        type='text'
-                        onChange={(e) => handleInput('interest4', e.target.value)} />
-                </div>
+                        required
+                        placeholder='Age*'
+                        type='number' onChange={(e) => handleInput('age', e.target.value)} />
+                    <div>
+                        <input
+                            required
+                            placeholder='Interest*'
+                            type='text'
+                            onChange={(e) => handleInput('interest1', e.target.value)} />
 
-                {
-                    photoLoading
-                        ? <i className='fas fa-spinner fa-spin'></i>
-                        : null
+                        <input
+                            required
+                            placeholder='Interest*'
+                            type='text'
+                            onChange={(e) => handleInput('interest2', e.target.value)} />
 
-                }
-                <img src={picture} alt='user-profile' className='image-preview' />
-                <PhotoUpload picture={picture} handleInput={handleInput} forceLoading={forceLoading} />
-            </form>
+                        <input
+                            required
+                            placeholder='Interest*'
+                            type='text'
+                            onChange={(e) => handleInput('interest3', e.target.value)} />
 
+                        <input
+                            required
+                            placeholder='Interest*'
+                            type='text'
+                            onChange={(e) => handleInput('interest4', e.target.value)} />
+                    </div>
 
-            <div className='submit-cancel-button-container'>
-                <button
-                    type='submit'
-                    disabled={firstName && lastName && address && age && interest1 && interest2 && interest3 && interest4 ? false : true}
-                    form='add-user'
-                    onClick={(e) => 
-                        submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture })
-                        && alert('User Added')
-                        }>
-                    Submit
+                    {
+                        photoLoading
+                            ? <i className='fas fa-spinner fa-spin'></i>
+                            : null
+
+                    }
+                    <img src={picture} alt='user-profile' className='image-preview' />
+                    <PhotoUpload picture={picture} handleInput={handleInput} forceLoading={forceLoading} />
+                </form>
+
+                <div className='submit-cancel-button-container'>
+                    <button
+                        disabled={firstName && lastName && address && age && interest1 && interest2 && interest3 && interest4 ? false : true}
+                        onClick={() => this.handleSubmit()}>
+                        Submit
                 </button>
-                <button
-                    type='reset'
-                    form='add-user'
-                    onClick={() => reset()}
-                >Cancel</button>
-            </div>
-        </React.Fragment>
-    )
+                    <button
+                        type='reset'
+                        form='add-user'
+                        onClick={() => reset()}
+                    >Cancel</button>
+                </div>
+            </React.Fragment>
+        )
+    }
 }
 
 let mapStateToProps = (state) => {
