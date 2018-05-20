@@ -20,6 +20,8 @@
 2. Redux - JavaScript Library for managing application state
 3. Sass - CSS preprocessor, which adds special features such as variables, nested rules and mixins (sometimes referred to as syntactic sugar) into regular CSS. 
 
+** App is mobile responsive.
+
 ### Back-End
 1. Node - JavaScript run-time environment that executes JavaScript code server-side.
 2. Express - A web application framework for Node.js, designed for building web applications and APIs
@@ -31,4 +33,5 @@
 ### Testing
 1. Jest - JavaScript testing solution for any React project.
 
-** App is mobile responsive.
+#### Live Site
+[User Search](https://user-search.brittanyjat.com/)
