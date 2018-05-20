@@ -51,7 +51,6 @@ class AddUser extends Component {
             interest4,
             reset } = this.props;
 
-        // if (this.state.password == true) this.submitUser({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture });
         return (
             <React.Fragment>
                 <form className='add-user-form' id='add-user'>
