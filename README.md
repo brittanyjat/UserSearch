@@ -6,3 +6,10 @@
 2. Solution should either seed data or provide a way to enter new users or both
 
 3. Simulate search being slow and have the UI gracefully handle the delay
+---
+## Technical Requirements
+1. A Web Application using WebAPI and a front-end JavaScript framework (e.g., Angular, AngularJS, React, Aurelia, etc.) 
+
+2. Use an ORM framework to talk to the database
+
+3. Unit Tests for appropriate parts of the application
