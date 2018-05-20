@@ -1,4 +1,5 @@
 # User Search App
+[Live Site](https://user-search.brittanyjat.com/)
 
 ## Business Requirements
 1. The application accepts search input in a text box and then displays in a pleasing style a list of people where any part of their first or last name matches what was typed in the search box (displaying at least name, address, age, interests, and a picture). 
@@ -32,6 +33,36 @@
 
 ### Testing
 1. Jest - JavaScript testing solution for any React project.
+---
 
-#### Live Site
-[User Search](https://user-search.brittanyjat.com/)
+## Instructions
+1. Type part or all of the user's name you are searching for. You can search for Their first and/or last name.
+2. Queries are not case sensitive. 
+
+⋅⋅* example: considering the sample data below, if I were to search for 'Wi', both 'Rilo Lewis' and 'Willy Wonka' will be returned as they both have 'wi' in their name.
+
+### Sample Data
+
+```[
+    {
+        "id": 7,
+        "lastName": "Jenkins",
+        "firstName": "Greg",
+    },
+    {
+        "id": 5,
+        "lastName": "Lewis",
+        "firstName": "Rilo",
+    },
+    {
+        "id": 12,
+        "lastName": "Wonka",
+        "firstName": "Willy",
+    },
+    {
+        "id": 13,
+        "lastName": "Frehley",
+        "firstName": "Ace",
+    }
+]
+```

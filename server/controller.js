@@ -41,5 +41,13 @@ module.exports = {
                     res.status(200).send(results)
                 }).catch(err => res.status(500).send(err))
         }, 2000)
+    },
+    getAll: (req, res) => {
+        const db = req.app.get('db');
+        db.People.findAll({
+        })
+            .then(results => {
+                res.status(200).send(results)
+            }).catch(err => res.status(500).send(err))
     }
 }

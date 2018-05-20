@@ -18,6 +18,7 @@ app.set('db', db);
 
 app.post('/person', controller.addUser);
 app.get('/person', controller.getUser);
+app.get('/all', controller.getAll);
 
 db.sequelize.sync().then(() => {
     app.listen(SERVER_PORT, () => {
