@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { handleInput, submitPerson, forceLoading, reset } from '../redux/reducer';
+import { handleInput, forceLoading, reset } from '../redux/reducer';
 import Asterisk from './Asterisk';
 import PhotoUpload from './PhotoUpload';
+import axios from 'axios';
 
 class AddUser extends Component {
 
@@ -11,28 +12,36 @@ class AddUser extends Component {
         if (passwordCheck === process.env.REACT_APP_PASSWORD) {
             this.submitUser()
         } else if (passwordCheck === null) {
-            
+
         } else {
             this.handleSubmit()
         }
     }
 
     submitUser = () => {
-        const {
-            firstName,
-            lastName,
-            address,
-            age,
-            picture,
-            interest1,
-            interest2,
-            interest3,
-            interest4,
-            submitPerson } = this.props;
+        let body = {
+            firstName: this.props.firstName,
+            lastName: this.props.lastName,
+            address: this.props.address,
+            age: this.props.age,
+            interests: [
+                this.props.interest1,
+                this.props.interest2,
+                this.props.interest3,
+                this.props.interest4],
+            picture: this.props.picture
+        }
+        axios.post('/person', body).then(res => {
+            res.status === 200
+                ? this.successfulAdd(res.data)
+                : alert('Error adding user. Please try again')
+        })
 
-        submitPerson({ firstName: firstName, lastName: lastName, address: address, age: age, interests: [interest1, interest2, interest3, interest4], picture: picture })
-        alert('User Added')
-        document.getElementById('add-user').submit();
+    }
+
+    successfulAdd = (data) => {
+        alert(`Successfully Added ${data.firstName} ${data.lastName}`);
+        document.getElementById('add-user').submit()
     }
 
     render() {
@@ -144,4 +153,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { handleInput, submitPerson, forceLoading, reset })(AddUser);
+export default connect(mapStateToProps, { handleInput, forceLoading, reset })(AddUser);
