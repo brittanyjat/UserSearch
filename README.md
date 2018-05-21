@@ -71,9 +71,9 @@
 1. I implemented Cloudinary and React-Dropzone in order for the user's photo to be added to their profile in the database.
 2. Once required fields are inputted (First Name, Last Name, Address, Age, and 4 Interests), Submit button will be enabled. 
 3. After hosting this project, I decided to require an admin password on all submissions to avoid bad data ending up in my database. If you are intersted in using this functionality, please message me for the password.
+---
 
-
-## Seeded Users in Database for Possible Searches
+## Seed Users in Database for Possible Searches
 ```[
     {
         "id": 7,
