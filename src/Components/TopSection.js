@@ -8,9 +8,10 @@ function TopSection(props) {
     const { modalDisplay, loading } = props;
     return (
         <div className='top-section-main-container'>
+            {/* <a href='https://github.com/brittanyjat/UserSearch'>see instructions and project info on <i class="fab fa-github"></i></a> */}
             <div className='search-add-button-container'>
                 <button
-                    style={{ backgroundColor: modalDisplay !== 'search' ? '#465761' : null }}                
+                    style={{ backgroundColor: modalDisplay !== 'search' ? '#465761' : null }}
                     onClick={() => props.toggleModal('search')}>
                     Search
                 </button>
@@ -23,7 +24,7 @@ function TopSection(props) {
             </div>
             {
                 modalDisplay === 'search'
-                    ? <Search loading={loading}/>
+                    ? <Search loading={loading} />
                     : <AddUser />
             }
         </div>
