@@ -73,7 +73,7 @@
 3. After hosting this project, I decided to require an admin password on all submissions to avoid bad data ending up in my database. If you are intersted in using this functionality, please message me for the password.
 ---
 
-## Seed Users in Database for Possible Searches
+## Users in Database for Possible Searches
 ```[
     {
         "id": 7,
